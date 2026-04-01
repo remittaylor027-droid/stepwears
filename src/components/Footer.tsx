@@ -62,7 +62,7 @@ export default function Footer() {
       </div>
 
       {/* Main Grid */}
-      <div style={{
+      <div className="footer-main-grid" style={{
         maxWidth: "1280px", margin: "0 auto", padding: "64px 24px",
         display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "48px",
       }}>
@@ -179,7 +179,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div style={{ borderTop: "1px solid #4a2a18" }}>
-        <div style={{
+        <div className="footer-bottom-bar" style={{
           maxWidth: "1280px", margin: "0 auto", padding: "18px 24px",
           display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "12px",
         }}>

@@ -40,73 +40,67 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer style={{ width: "100%", backgroundColor: "#2d1f1a", color: "#d4beb2" }}>
-
+    <footer className="w-full bg-brand-900 text-brand-300">
       {/* Promo Banner */}
-      <div style={{
-        borderBottom: "1px solid #4a2a18", padding: "14px 24px",
-        display: "flex", alignItems: "center", justifyContent: "center",
-        gap: "24px", flexWrap: "wrap", backgroundColor: "#4a2a18",
-      }}>
-        <p style={{ fontSize: "0.85rem", color: "#f2e8e1", fontWeight: 500, margin: 0 }}>
+      <div className="border-b border-brand-800 py-3.5 px-6 flex items-center justify-center gap-6 flex-wrap bg-brand-800">
+        <p className="text-sm text-brand-50 font-medium m-0">
           🚚 Free shipping on orders over{" "}
-          <span style={{ fontWeight: 700 }}>Rs. 5,000</span> — Use code{" "}
-          <span style={{ fontWeight: 700, letterSpacing: "0.06em", color: "#e8d8ce" }}>STEPFREE</span>
+          <span className="font-bold">Rs. 5,000</span> — Use code{" "}
+          <span className="font-bold tracking-wide text-brand-200">STEPFREE</span>
         </p>
-        <Link href="/categories" style={{
-          fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase",
-          color: "#2d1f1a", textDecoration: "none", border: "1px solid #f2e8e1",
-          borderRadius: "999px", padding: "6px 18px", backgroundColor: "#f2e8e1",
-          transition: "background-color 0.15s",
-        }}>Shop Now →</Link>
+        <Link
+          href="/categories"
+          className="text-xs font-bold tracking-wider uppercase text-brand-900 no-underline border border-brand-50 rounded-full py-1.5 px-4.5 bg-brand-50 transition-colors duration-150 hover:bg-brand-100"
+        >
+          Shop Now →
+        </Link>
       </div>
 
       {/* Main Grid */}
-      <div className="footer-main-grid" style={{
-        maxWidth: "1280px", margin: "0 auto", padding: "64px 24px",
-        display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "48px",
-      }}>
+      <div className="max-w-7xl mx-auto py-16 px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Brand */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
-            <div style={{
-              width: "32px", height: "32px", borderRadius: "50%", backgroundColor: "#b8704a",
-              display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-            }}>
-              <span style={{ color: "#fdf9f7", fontSize: "10px", fontWeight: 800, letterSpacing: "0.05em" }}>SW</span>
+        <div className="flex flex-col gap-5">
+          <Link href="/" className="flex items-center gap-2.5 no-underline">
+            <div className="w-8 h-8 rounded-full bg-brand-500 flex items-center justify-center flex-shrink-0">
+              <span className="text-brand-50 text-xs font-black tracking-tight">SW</span>
             </div>
-            <span style={{ fontSize: "1rem", fontWeight: 800, letterSpacing: "-0.02em", color: "#f2e8e1" }}>Step Wears</span>
+            <span className="text-lg font-black tracking-tight text-brand-50">Step Wears</span>
           </Link>
 
-          <p style={{ fontSize: "0.85rem", color: "#a09088", lineHeight: 1.75, maxWidth: "220px", margin: 0 }}>
+          <p className="text-sm text-brand-400 leading-relaxed max-w-56 m-0">
             Premium ladies&apos; footwear crafted for elegance and comfort. Walk with confidence, every single day.
           </p>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <div className="flex flex-col gap-2.5">
             {[
               { icon: Mail, label: "support@stepwears.online", href: "mailto:support@stepwears.online" },
               { icon: Phone, label: "+92 339 0912145", href: "tel:+923390912145" },
             ].map(({ icon: Icon, label, href }) => (
-              <a key={label} href={href} style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.85rem", color: "#a09088", textDecoration: "none" }}>
-                <Icon style={{ width: "14px", height: "14px", color: "#c0a090", flexShrink: 0 }} />{label}
+              <a
+                key={label}
+                href={href}
+                className="flex items-center gap-2 text-sm text-brand-400 no-underline hover:text-brand-300 transition-colors duration-150"
+              >
+                <Icon className="w-3.5 h-3.5 text-brand-500 flex-shrink-0" />
+                {label}
               </a>
             ))}
-            <span style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.85rem", color: "#a09088" }}>
-              <MapPin style={{ width: "14px", height: "14px", color: "#c0a090", flexShrink: 0, marginTop: "2px" }} />
+            <div className="flex items-start gap-2 text-sm text-brand-400">
+              <MapPin className="w-3.5 h-3.5 text-brand-500 flex-shrink-0 mt-0.5" />
               Lahore, Punjab, Pakistan
-            </span>
+            </div>
           </div>
 
-          <div style={{ display: "flex", gap: "8px" }}>
+          <div className="flex gap-2">
             {socialLinks.map(({ icon: Icon, label, href }) => (
-              <a key={label} href={href} aria-label={label} style={{
-                width: "34px", height: "34px", borderRadius: "50%", border: "1px solid #4a2a18",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                color: "#a09088", transition: "border-color 0.15s, color 0.15s", textDecoration: "none",
-              }}
-                onMouseOver={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#b8704a"; (e.currentTarget as HTMLElement).style.color = "#b8704a"; }}
-                onMouseOut={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#4a2a18"; (e.currentTarget as HTMLElement).style.color = "#a09088"; }}
-              ><Icon style={{ width: "14px", height: "14px" }} /></a>
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                className="w-8.5 h-8.5 rounded-full border border-brand-800 flex items-center justify-center text-brand-400 transition-all duration-150 hover:border-brand-500 hover:text-brand-500 no-underline"
+              >
+                <Icon className="w-3.5 h-3.5" />
+              </a>
             ))}
           </div>
         </div>
@@ -117,16 +111,18 @@ export default function Footer() {
           { title: "Categories", links: footerLinks.categories },
         ].map(({ title, links }) => (
           <div key={title}>
-            <h3 style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#e8d8ce", marginBottom: "20px", marginTop: 0 }}>
+            <h3 className="text-xs font-bold tracking-widest uppercase text-brand-200 mb-5 mt-0">
               {title}
             </h3>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
+            <ul className="list-none p-0 m-0 flex flex-col gap-3">
               {links.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} style={{ fontSize: "0.85rem", color: "#a09088", textDecoration: "none", transition: "color 0.15s" }}
-                    onMouseOver={(e) => ((e.currentTarget as HTMLElement).style.color = "#f2e8e1")}
-                    onMouseOut={(e) => ((e.currentTarget as HTMLElement).style.color = "#a09088")}
-                  >{link.label}</Link>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-brand-400 no-underline transition-colors duration-150 hover:text-brand-50"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -134,64 +130,68 @@ export default function Footer() {
         ))}
 
         {/* Support + Newsletter */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "40px" }}>
+        <div className="flex flex-col gap-10">
           <div>
-            <h3 style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#e8d8ce", marginBottom: "20px", marginTop: 0 }}>
+            <h3 className="text-xs font-bold tracking-widest uppercase text-brand-200 mb-5 mt-0">
               Support
             </h3>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
+            <ul className="list-none p-0 m-0 flex flex-col gap-3">
               {footerLinks.support.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} style={{ fontSize: "0.85rem", color: "#a09088", textDecoration: "none", transition: "color 0.15s" }}
-                    onMouseOver={(e) => ((e.currentTarget as HTMLElement).style.color = "#f2e8e1")}
-                    onMouseOut={(e) => ((e.currentTarget as HTMLElement).style.color = "#a09088")}
-                  >{link.label}</Link>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-brand-400 no-underline transition-colors duration-150 hover:text-brand-50"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h3 style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#e8d8ce", marginBottom: "12px", marginTop: 0 }}>
+            <h3 className="text-xs font-bold tracking-widest uppercase text-brand-200 mb-3 mt-0">
               Newsletter
             </h3>
-            <p style={{ fontSize: "0.82rem", color: "#a09088", marginBottom: "12px", lineHeight: 1.6, marginTop: 0 }}>
+            <p className="text-xs text-brand-400 mb-3 leading-relaxed mt-0">
               Exclusive offers & new arrivals straight to your inbox.
             </p>
-            <form style={{ display: "flex", gap: "8px" }} onSubmit={(e) => e.preventDefault()}>
-              <input type="email" placeholder="your@email.com" style={{
-                flex: 1, minWidth: 0, padding: "9px 14px", borderRadius: "10px",
-                border: "1px solid #4a2a18", backgroundColor: "#3a2218", fontSize: "0.82rem",
-                color: "#f2e8e1", outline: "none",
-              }} />
-              <button type="submit" style={{
-                padding: "9px 16px", borderRadius: "10px", border: "none",
-                backgroundColor: "#b8704a", color: "#fdf9f7", fontSize: "0.82rem",
-                fontWeight: 700, cursor: "pointer", flexShrink: 0, transition: "opacity 0.15s",
-              }}
-                onMouseOver={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.8")}
-                onMouseOut={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
-              >Join</button>
+            <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
+              <input
+                type="email"
+                placeholder="your@email.com"
+                className="flex-1 min-w-0 py-2.5 px-3.5 rounded-lg border border-brand-800 bg-brand-800 text-sm text-brand-50 outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500"
+              />
+              <button
+                type="submit"
+                className="py-2.5 px-4 rounded-lg bg-brand-500 text-brand-50 text-sm font-bold cursor-pointer flex-shrink-0 transition-opacity duration-150 hover:opacity-80"
+              >
+                Join
+              </button>
             </form>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div style={{ borderTop: "1px solid #4a2a18" }}>
-        <div className="footer-bottom-bar" style={{
-          maxWidth: "1280px", margin: "0 auto", padding: "18px 24px",
-          display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "12px",
-        }}>
-          <p style={{ fontSize: "0.78rem", color: "#7a4426", margin: 0 }}>
+      <div className="border-t border-brand-800">
+        <div className="max-w-7xl mx-auto py-4.5 px-6 flex items-center justify-between flex-wrap gap-3">
+          <p className="text-xs text-brand-700 m-0">
             © {new Date().getFullYear()} Step Wears. All rights reserved.
           </p>
-          <div style={{ display: "flex", gap: "24px" }}>
-            {[{ label: "Privacy", href: "/privacy" }, { label: "Terms", href: "/terms" }, { label: "Sitemap", href: "/sitemap" }].map(({ label, href }) => (
-              <Link key={label} href={href} style={{ fontSize: "0.78rem", color: "#7a4426", textDecoration: "none", transition: "color 0.15s" }}
-                onMouseOver={(e) => ((e.currentTarget as HTMLElement).style.color = "#b8704a")}
-                onMouseOut={(e) => ((e.currentTarget as HTMLElement).style.color = "#7a4426")}
-              >{label}</Link>
+          <div className="flex gap-6">
+            {[
+              { label: "Privacy", href: "/privacy" },
+              { label: "Terms", href: "/terms" },
+              { label: "Sitemap", href: "/sitemap" },
+            ].map(({ label, href }) => (
+              <Link
+                key={label}
+                href={href}
+                className="text-xs text-brand-700 no-underline transition-colors duration-150 hover:text-brand-500"
+              >
+                {label}
+              </Link>
             ))}
           </div>
         </div>

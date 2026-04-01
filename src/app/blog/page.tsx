@@ -1,4 +1,6 @@
-﻿import Link from "next/link";
+﻿"use client";
+
+import Link from "next/link";
 
 const POSTS = [
   {
@@ -41,7 +43,7 @@ export default function BlogPage() {
               <small style={{ display: "block", color: "#a09088", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "8px" }}>{post.date}</small>
               <h2 style={{ fontSize: "1.25rem", fontWeight: 800, margin: "0 0 10px", color: "#2d1f1a" }}>{post.title}</h2>
               <p style={{ margin: "0 0 14px", color: "#6d5e54", lineHeight: 1.6 }}>{post.excerpt}</p>
-              <Link href={/blog/} style={{ color: "#b8704a", fontWeight: 700, textDecoration: "none" }}>
+              <Link href={`/blog/${post.slug}`} style={{ color: "#b8704a", fontWeight: 700, textDecoration: "none" }}>
                 Read more →
               </Link>
             </article>

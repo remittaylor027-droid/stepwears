@@ -284,7 +284,7 @@ export default function FAQsPage() {
 
   const current = FAQ_CATEGORIES.find((c) => c.id === activeCategory)!;
 
-  const WHATSAPP = "923001234567";
+  const WHATSAPP = "923390912145";
   const waUrl = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Hi Step Wears! I have a question that isn't covered in your FAQs.")}`;
 
   return (

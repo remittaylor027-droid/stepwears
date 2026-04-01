@@ -105,7 +105,7 @@ export default function HireMePage() {
     addFiles(e.dataTransfer.files);
   };
 
-  const WHATSAPP_NUMBER = "923001234567"; // ← update with real number
+  const WHATSAPP_NUMBER = "923390912145"; // ← update with real number
   const whatsappMsg = encodeURIComponent(
     `Hi Step Wears! I'd like to place a custom shoe order.\nName: ${form.name}\nSize: ${form.size}\nColor: ${form.color}\nDetails: ${form.details}`
   );

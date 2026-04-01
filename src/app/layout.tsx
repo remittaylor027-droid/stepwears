@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "Step Wears — Premium Ladies' Footwear",
   description:
     "Discover Step Wears's handpicked collection of ladies' footwear — from timeless moccasins to statement heels. Crafted for elegance, built for comfort.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

@@ -22,7 +22,7 @@ const notEligible = [
 ];
 
 const steps = [
-  { num: "01", title: "Contact Us", desc: "Email hello@stepwear.pk or WhatsApp us within 7 days of delivery with your order number and photos of the item." },
+  { num: "01", title: "Contact Us", desc: "Email support@stepwears.online or WhatsApp us within 7 days of delivery with your order number and photos of the item." },
   { num: "02", title: "Approval", desc: "Our team reviews your request within 24 hours and sends you a return authorisation." },
   { num: "03", title: "Ship It Back", desc: "Pack the item securely and send it to our Lahore warehouse. Share the tracking number with us." },
   { num: "04", title: "Resolution", desc: "Once received and inspected, we process your exchange or refund within 3–5 business days." },

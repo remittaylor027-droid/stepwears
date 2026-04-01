@@ -84,8 +84,8 @@ export default function Footer() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {[
-              { icon: Mail, label: "hello@stepwear.pk", href: "mailto:hello@stepwear.pk" },
-              { icon: Phone, label: "+92 300 1234567", href: "tel:+923001234567" },
+              { icon: Mail, label: "support@stepwears.online", href: "mailto:support@stepwears.online" },
+              { icon: Phone, label: "+92 339 0912145", href: "tel:+923390912145" },
             ].map(({ icon: Icon, label, href }) => (
               <a key={label} href={href} style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.85rem", color: "#a09088", textDecoration: "none" }}>
                 <Icon style={{ width: "14px", height: "14px", color: "#c0a090", flexShrink: 0 }} />{label}

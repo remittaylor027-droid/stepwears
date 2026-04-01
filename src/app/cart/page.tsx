@@ -20,7 +20,7 @@ export default function CartPage() {
   const whatsappMsg = encodeURIComponent(
     `Hi Step Wears! I'd like to place an order:\n\n${whatsappLines}\n\nTotal: Rs. ${total.toLocaleString()}\n\nPlease confirm availability.`
   );
-  const whatsappUrl = `https://wa.me/923001234567?text=${whatsappMsg}`;
+  const whatsappUrl = `https://wa.me/923390912145?text=${whatsappMsg}`;
 
   /* ── Empty cart ── */
   if (items.length === 0) {

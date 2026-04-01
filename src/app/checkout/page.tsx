@@ -386,7 +386,7 @@ export default function CheckoutPage() {
 
                       {/* WhatsApp screenshot button */}
                       <a
-                        href={`https://wa.me/923001234567?text=${encodeURIComponent(`Hi Step Wears! I've made a bank transfer of Rs. ${total.toLocaleString()} for my order. Sending my payment screenshot now.`)}`}
+                        href={`https://wa.me/923390912145?text=${encodeURIComponent(`Hi Step Wears! I've made a bank transfer of Rs. ${total.toLocaleString()} for my order. Sending my payment screenshot now.`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{

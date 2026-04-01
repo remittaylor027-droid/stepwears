@@ -11,25 +11,25 @@ const CONTACT_CARDS = [
   {
     icon: Phone,
     label: "Call Us",
-    value: "+92 300 1234567",
+    value: "+92 339 0912145",
     sub: "Mon – Sat, 10am – 7pm",
-    href: "tel:+923001234567",
+    href: "tel:+923390912145",
     color: "#b8704a",
   },
   {
     icon: Mail,
     label: "Email Us",
-    value: "hello@stepwear.pk",
+    value: "support@stepwears.online",
     sub: "We reply within 24 hours",
-    href: "mailto:hello@stepwear.pk",
+    href: "mailto:support@stepwears.online",
     color: "#b8704a",
   },
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+92 300 1234567",
+    value: "+92 339 0912145",
     sub: "Chat with us anytime",
-    href: "https://wa.me/923001234567",
+    href: "https://wa.me/923390912145",
     color: "#25d366",
   },
   {
@@ -103,7 +103,7 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); setSubmitted(true); };
 
   const whatsappMsg = encodeURIComponent(`Hi Step Wears! I'd like to get in touch.`);
-  const whatsappUrl = `https://wa.me/923001234567?text=${whatsappMsg}`;
+  const whatsappUrl = `https://wa.me/923390912145?text=${whatsappMsg}`;
 
   return (
     <main style={{ background: "#fdf9f7", minHeight: "100vh" }}>

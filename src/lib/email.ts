@@ -166,7 +166,7 @@ function buildEmailHtml(d: OrderEmailData): string {
         <tr>
           <td style="background:#2d1f1a;border-radius:0 0 20px 20px;padding:28px 40px;text-align:center;">
             <div style="font-size:13px;color:#7a6a62;">Questions? WhatsApp us at</div>
-            <div style="font-size:15px;font-weight:700;color:#b8704a;margin-top:4px;">+92 300 123 4567</div>
+            <div style="font-size:15px;font-weight:700;color:#b8704a;margin-top:4px;">+92 339 0912145</div>
             <div style="font-size:11px;color:#4a3a32;margin-top:16px;">© 2025 Step Wears · Premium Ladies' Footwear</div>
           </td>
         </tr>

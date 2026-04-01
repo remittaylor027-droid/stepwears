@@ -38,7 +38,7 @@ const sections = [
   {
     icon: Mail,
     title: "Marketing Communications",
-    content: `We will only send you promotional emails if you have opted in. You can unsubscribe at any time by clicking the "Unsubscribe" link at the bottom of any email, or by contacting us at hello@stepwear.pk.`,
+    content: `We will only send you promotional emails if you have opted in. You can unsubscribe at any time by clicking the "Unsubscribe" link at the bottom of any email, or by contacting us at support@stepwears.online.`,
   },
   {
     icon: Shield,
@@ -48,7 +48,7 @@ const sections = [
 • Request correction of inaccurate data
 • Request deletion of your data (subject to legal obligations)
 • Withdraw consent for marketing at any time
-To exercise any of these rights, contact us at hello@stepwear.pk.`,
+To exercise any of these rights, contact us at support@stepwears.online.`,
   },
 ];
 

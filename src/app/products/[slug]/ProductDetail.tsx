@@ -258,7 +258,7 @@ export default function ProductDetail({ product, related }: Props) {
                 {inStock ? "Add to Cart" : "Out of Stock"}
               </button>
 
-              <a href={`https://wa.me/923001234567?text=${whatsappMsg}`}
+              <a href={`https://wa.me/923390912145?text=${whatsappMsg}`}
                 target="_blank" rel="noopener noreferrer"
                 style={{ 
                   width: "66px", height: "66px", borderRadius: "18px", backgroundColor: "#25d366", 

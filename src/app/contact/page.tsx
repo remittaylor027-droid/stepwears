@@ -34,7 +34,7 @@ const CONTACT_CARDS = [
   },
   {
     icon: MapPin,
-    label: "Visit Us",
+    label: "Our Showroom",
     value: "Lahore, Punjab",
     sub: "Pakistan",
     href: "https://maps.google.com",

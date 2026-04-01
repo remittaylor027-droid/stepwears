@@ -420,9 +420,7 @@ export default function ContactPage() {
                 <div>
                   <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#2d1f1a", marginBottom: "4px" }}>Our Showroom</div>
                   <div style={{ fontSize: "0.82rem", color: "#7a6a62", lineHeight: 1.65 }}>
-                    Shop No. 12, Liberty Market<br />
-                    Gulberg III, Lahore<br />
-                    Punjab, Pakistan
+                    Lahore, Punjab, Pakistan
                   </div>
                   <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer"
                     style={{ fontSize: "0.75rem", color: "#b8704a", fontWeight: 600, textDecoration: "none", marginTop: "8px", display: "inline-flex", alignItems: "center", gap: "4px" }}>

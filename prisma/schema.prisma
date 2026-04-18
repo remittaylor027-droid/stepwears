@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+}
+
+enum OrderStatus {
+  pending
+  confirmed
+  shipped
+  delivered
+  cancelled
+}
+
+enum PaymentMethod {
+  cod
+  bank
+}
+
+model Order {
+  id             String        @id @default(uuid())
+  createdAt      DateTime      @default(now()) @map("created_at")
+
+  // Customer
+  customerName   String        @map("customer_name")
+  customerPhone  String        @map("customer_phone")
+  customerEmail  String?       @map("customer_email")
+
+  // Delivery
+  address        String
+  city           String
+  notes          String?
+
+  // Payment
+  paymentMethod  PaymentMethod @map("payment_method")
+
+  // Items as JSON array
+  // [{ product_id, product_name, image, color, size, quantity, price }]
+  items          Json
+
+  // Totals (in PKR)
+  subtotal       Int
+  shipping       Int
+  total          Int
+
+  // Lifecycle
+  status         OrderStatus   @default(pending)
+
+  @@map("orders")
+}
+

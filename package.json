@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@prisma/client": "^7.6.0",
+    "@supabase/ssr": "^0.12.0",
     "@supabase/supabase-js": "^2.100.1",
     "@vercel/analytics": "^2.0.1",
     "lucide-react": "^1.7.0",

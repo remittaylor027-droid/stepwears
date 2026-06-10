@@ -7,6 +7,7 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
 
     const {
+      profileId,
       name, phone, email,
       address, city, notes,
       payment, items, subtotal, shipping, total,
@@ -24,6 +25,7 @@ export async function POST(req: NextRequest) {
       .from("orders")
       .insert([
         {
+          profile_id:     profileId || null,
           customer_name:  name,
           customer_phone: phone,
           customer_email: email || null,

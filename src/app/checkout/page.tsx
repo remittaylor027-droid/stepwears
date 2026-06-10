@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { createClient } from "@/lib/supabase/client";
 import {
   ArrowLeft, ArrowRight, User, Phone, Mail, MapPin,
   Landmark, Truck, CheckCircle, ShoppingBag, Copy, Check, MessageCircle,
@@ -57,6 +58,40 @@ export default function CheckoutPage() {
   const [orderRef, setOrderRef] = useState("");
   const [copied, setCopied] = useState<string | null>(null);
 
+  const [userId, setUserId] = useState<string | null>(null);
+  const [saveProfile, setSaveProfile] = useState(false);
+  const supabase = createClient();
+
+  useEffect(() => {
+    async function loadUser() {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        setUserId(user.id);
+        setSaveProfile(true);
+        // fetch profile
+        try {
+          const res = await fetch(`/api/profile?id=${user.id}`);
+          if (res.ok) {
+            const { profile } = await res.json();
+            if (profile) {
+              setForm(prev => ({
+                ...prev,
+                name: profile.name || prev.name,
+                email: profile.email || user.email || prev.email,
+                phone: profile.phone || prev.phone,
+                address: profile.address || prev.address,
+                city: profile.city || prev.city,
+              }));
+            }
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+    }
+    loadUser();
+  }, [supabase]);
+
   const shipping = payment === "bank" ? 0 : (subtotal >= SHIPPING_THRESHOLD ? 0 : SHIPPING_COST);
   const total = subtotal + shipping;
 
@@ -74,10 +109,25 @@ export default function CheckoutPage() {
     e.preventDefault();
     setSubmitting(true);
     try {
+      if (userId && saveProfile) {
+        await fetch("/api/profile", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id: userId,
+            name: form.name,
+            phone: form.phone,
+            address: form.address,
+            city: form.city,
+          }),
+        }).catch(e => console.error("Failed to save profile", e));
+      }
+
       const res = await fetch("/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          profileId: userId,
           name: form.name,
           phone: form.phone,
           email: form.email,
@@ -278,6 +328,21 @@ export default function CheckoutPage() {
                       onFocus={(e) => (e.currentTarget.style.borderColor = "#b8704a")}
                       onBlur={(e) => (e.currentTarget.style.borderColor = "#e8d8ce")} />
                   </div>
+
+                  {userId && (
+                    <div style={{ marginTop: "10px", display: "flex", alignItems: "center", gap: "8px" }}>
+                      <input 
+                        type="checkbox" 
+                        id="saveProfile" 
+                        checked={saveProfile} 
+                        onChange={(e) => setSaveProfile(e.target.checked)}
+                        style={{ width: "16px", height: "16px", accentColor: "#2d1f1a", cursor: "pointer" }}
+                      />
+                      <label htmlFor="saveProfile" style={{ fontSize: "0.82rem", color: "#4a2a18", cursor: "pointer", userSelect: "none" }}>
+                        Save this information to my profile for future orders
+                      </label>
+                    </div>
+                  )}
                 </div>
               </div>
 

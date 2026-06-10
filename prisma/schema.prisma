@@ -24,6 +24,10 @@ model Order {
   id             String        @id @default(uuid())
   createdAt      DateTime      @default(now()) @map("created_at")
 
+  // Optional link to a user profile
+  profileId      String?       @map("profile_id")
+  profile        Profile?      @relation(fields: [profileId], references: [id])
+
   // Customer
   customerName   String        @map("customer_name")
   customerPhone  String        @map("customer_phone")
@@ -52,3 +56,15 @@ model Order {
   @@map("orders")
 }
 
+model Profile {
+  id        String   @id // matches Supabase auth.users ID
+  email     String   @unique
+  name      String?
+  phone     String?
+  address   String?
+  city      String?
+
+  orders    Order[]
+
+  @@map("profiles")
+}

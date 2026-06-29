@@ -96,7 +96,7 @@ export default async function AccountPage() {
               </div>
             ) : (
               <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                {profile.orders.map((order) => (
+                {profile.orders.map((order: any) => (
                   <div key={order.id} style={{ padding: "16px", borderRadius: "16px", border: "1px solid #ede8e3", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px" }}>
                     <div>
                       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "6px" }}>

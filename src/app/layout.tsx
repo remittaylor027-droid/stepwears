@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/lib/cart";
 import { Analytics } from "@vercel/analytics/next";
-import { GoogleTagManager } from '@next/third-parties/google';
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +37,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <GoogleTagManager gtmId="GTM-5BSNJ69M" />
+      <GoogleAnalytics gaId="G-ETBHJ5HF4F" />
       <head>
         <script
           async

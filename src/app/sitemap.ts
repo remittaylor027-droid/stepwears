@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Use the production URL when deployed, or localhost for local testing
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.stepwears.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stepwears.online';
 
   return [
     {
